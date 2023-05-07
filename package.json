@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "deno": "^0.1.1",
+    "discordeno": "^18.0.1",
+    "npm": "^9.6.6"
+  },
+  "name": "otoiro",
+  "version": "1.0.0",
+  "main": "main.ts",
+  "devDependencies": {},
+  "scripts": {
+    "otoiro": "deno run -A --watch ./main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ritsu-me/otoiro.git"
+  },
+  "author": "ritsu-me",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ritsu-me/otoiro/issues"
+  },
+  "homepage": "",
+  "description": ""
+}
