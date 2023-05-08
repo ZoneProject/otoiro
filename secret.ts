@@ -1,4 +1,3 @@
-import { Deno } from "discordeno/types/_dnt.shims.js"
 import { dotenv } from "./deps.ts"
 
 if (Deno.env.get("PRODUCTION") !== "TRUE") {
