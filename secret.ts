@@ -5,7 +5,7 @@ try {
         export: true,
         path: "./.env.local",
     })
-} catch {}
+} catch {/*nothing*/}
 
 export const Secret = {
     DISCORD_TOKEN: Deno.env.get("DISCORD_TOKEN")!,
