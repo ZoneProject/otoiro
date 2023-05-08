@@ -3,7 +3,7 @@ import { dotenv } from "./deps.ts"
 try {
     dotenv.configSync({
         export: true,
-        path: "./.env.local",
+        path: "../.env.local",
     })
 } catch {}
 

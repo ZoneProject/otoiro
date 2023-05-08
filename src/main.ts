@@ -1,5 +1,5 @@
-import { createBot, Intents, startBot, CreateSlashApplicationCommand, InteractionResponseTypes } from "./deps.ts"
-import { Secret } from "./secret.ts"
+import { createBot, Intents, startBot, CreateSlashApplicationCommand, InteractionResponseTypes } from "./deps.js"
+import { Secret } from "./secret.js"
 
 const bot = createBot({
     token: Secret.DISCORD_TOKEN,

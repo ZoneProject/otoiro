@@ -6,10 +6,10 @@
   },
   "name": "otoiro",
   "version": "1.0.0",
-  "main": "main.ts",
+  "main": "./src/main.ts",
   "devDependencies": {},
   "scripts": {
-    "otoiro": "deno run -A --watch ./main.ts"
+    "otoiro": "deno run -A --watch ./src/main.ts"
   },
   "repository": {
     "type": "git",
