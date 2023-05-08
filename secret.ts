@@ -1,11 +1,12 @@
+import { Deno } from "discordeno/types/_dnt.shims.js"
 import { dotenv } from "./deps.ts"
 
-try {
+if (Deno.env.get("PRODUCTION") !== "TRUE") {
     dotenv.configSync({
         export: true,
         path: "./.env.local",
     })
-} catch {/*nothing*/}
+}
 
 export const Secret = {
     DISCORD_TOKEN: Deno.env.get("DISCORD_TOKEN")!,
