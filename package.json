@@ -2,6 +2,7 @@
   "dependencies": {
     "deno": "^0.1.1",
     "discordeno": "^18.0.1",
+    "dotenv": "^16.0.3",
     "npm": "^9.6.6"
   },
   "name": "otoiro",
