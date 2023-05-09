@@ -1,5 +1,5 @@
 import { dotenv } from "./deps.ts"
-import { Deno } from "./main.js"
+import { Deno } from "./main.ts"
 
 
 await dotenv.config({
