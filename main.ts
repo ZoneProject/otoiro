@@ -1,8 +1,5 @@
 import { createBot, Intents, startBot, CreateSlashApplicationCommand, InteractionResponseTypes } from "./deps.ts"
 import { Secret } from "./secret.ts"
-export const Deno = {
-    Deno
-}
 
 const bot = createBot({
     token: Secret.DISCORD_TOKEN,
