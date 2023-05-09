@@ -1,11 +1,11 @@
 import { dotenv } from "./deps.ts"
 
-try {
+if (Deno.env.get("PRODUCTION") !== "TRUE") {
     dotenv.configSync({
         export: true,
         path: "./.env.local",
     })
-} catch {}
+}
 
 export const Secret = {
     DISCORD_TOKEN: Deno.env.get("DISCORD_TOKEN")!,
