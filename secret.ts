@@ -7,9 +7,7 @@ await dotenv.config({
     path: "./.env.local",
 });
   
-const config = Deno.env.toObject();
-  
 export const Secret = {
-    DISCORD_TOKEN: config["DISCORD_TOKEN"],
-    GUILD_ID: config["GUILD_ID"]
+    DISCORD_TOKEN: Deno.env.get("DISCORD_TOKEN"),
+    GUILD_ID: Deno.env.get("GUILD_ID")
 };
