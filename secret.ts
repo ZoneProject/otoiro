@@ -1,4 +1,5 @@
 import { dotenv } from "./deps.ts"
+import { Deno } from "discordeno/types/_dnt.shims.js"
 
 if (Deno.env.get("PRODUCTION") !== "TRUE") {
     dotenv.configSync({
