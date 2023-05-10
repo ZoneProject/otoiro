@@ -50,6 +50,7 @@ bot.events.interactionCreate = (b, interaction) => {
                     content: "Pong!"
                 }
             })
+            break
         }
         default: {
             break
