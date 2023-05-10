@@ -11,13 +11,18 @@ const bot = createBot({
     },
 })
 
-const nekoCommand: CreateSlashApplicationCommand = {
-    name: "neko",
-    description: "にゃーんと返します",
-}
+const commandArray: CreateSlashApplicationCommand = [
+    {
+        name: "neko",
+        description: "にゃーんと返します"
+    },
+    {
+        name: "ping",
+        description: "Ping値を返します"
+    }
+]
 
-await bot.helpers.createGuildApplicationCommand(nekoCommand, Secret.GUILD_ID)
-await bot.helpers.upsertGuildApplicationCommands(Secret.GUILD_ID, [nekoCommand])
+await bot.helpers.upsertGlobalApplicationCommands(commandArray)
 
 bot.events.messageCreate = (b, message) => {
     if (message.content === "!neko") {
@@ -37,6 +42,14 @@ bot.events.interactionCreate = (b, interaction) => {
                 },
             })
             break
+        }
+        case "ping": {
+            b.helpers.sendInteractionResponse(interaction.id, interaction.token, {
+                type: InteractionResponseTypes.ChannelMessageWithSource,
+                data: {
+                    content: "Pong!"
+                }
+            })
         }
         default: {
             break
