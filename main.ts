@@ -11,6 +11,11 @@ const bot = createBot({
     },
 })
 
+const nekoCommand: CreateSlashApplicationCommand = {
+    name: "neko",
+    description: "にゃーんと返します"
+}
+
 const commandArray: CreateSlashApplicationCommand = [
     {
         name: "neko",
@@ -22,6 +27,7 @@ const commandArray: CreateSlashApplicationCommand = [
     }
 ]
 
+await bot.helpers.deleteGuildApplicationCommand(Secret.GUILD_ID, nekoCommand)
 await bot.helpers.upsertGlobalApplicationCommands(commandArray)
 
 bot.events.messageCreate = (b, message) => {
