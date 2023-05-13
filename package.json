@@ -2,7 +2,7 @@
   "dependencies": {
     "@types/node": "^20.1.0",
     "deno": "^0.1.1",
-    "discordeno": "^18.0.1",
+    "discord.js": "^14.11.0",
     "dotenv": "^16.0.3",
     "npm": "^9.6.6"
   },

@@ -1,61 +1,24 @@
-import { createBot, Intents, startBot, CreateSlashApplicationCommand, InteractionResponseTypes } from "./deps.ts"
-import { Secret } from "./secret.ts"
+import { Message, Client, Events, GatewayIntentBits } from 'discord.js'
 
-const bot = createBot({
-    token: Secret.DISCORD_TOKEN,
-    intents: Intents.Guilds | Intents.GuildMessages | Intents.MessageContent,
-    events: {
-        ready: (_bot, payload) => {
-            console.log(`${payload.user.username} is ready!`)
-        },
-    },
-})
+import dotenv from 'dotenv'
+dotenv.config();
 
-const commandArray: CreateSlashApplicationCommand = [
-    {
-        name: "neko",
-        description: "にゃーんと返します"
-    },
-    {
-        name: "ping",
-        description: "Ping値を返します"
+const client:Client = new Client({
+    intents: Object.values(GatewayIntentBits).reduce((a, b) => a | b)//GatewayIntents全定義
+});
+
+client.once(Events.ClientReady, (c: Client) => {
+    console.log(`Ready! Logged in as ${c.user?.tag}`);
+});
+
+client.on(Events.MessageCreate, async (message: Message) => {
+    if (message.author.bot) {
+        return;
     }
-]
 
-await bot.helpers.upsertGlobalApplicationCommands(commandArray)
-
-bot.events.messageCreate = (b, message) => {
-    if (message.content === "!neko") {
-        b.helpers.sendMessage(message.channelId, {
-            content: "にゃーん",
-        })
+    if (message.content.startsWith('!ping')) {
+        message.reply('Pong!');
     }
-}
+});
 
-bot.events.interactionCreate = (b, interaction) => {
-    switch (interaction.data?.name) {
-        case "neko": {
-            b.helpers.sendInteractionResponse(interaction.id, interaction.token, {
-                type: InteractionResponseTypes.ChannelMessageWithSource,
-                data: {
-                    content: "にゃーん！！",
-                },
-            })
-            break
-        }
-        case "ping": {
-            b.helpers.sendInteractionResponse(interaction.id, interaction.token, {
-                type: InteractionResponseTypes.ChannelMessageWithSource,
-                data: {
-                    content: "Pong!"
-                }
-            })
-            break
-        }
-        default: {
-            break
-        }
-    }
-}
-
-await startBot(bot)
+client.login(process.env.TOKEN);
