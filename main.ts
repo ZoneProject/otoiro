@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config();
 
 const client:Client = new Client({
-    intents: Object.values(GatewayIntentBits).reduce((a, b) => a | b)//GatewayIntents全定義
+  intents: Object.values(GatewayIntentBits).filter((v): v is number => typeof v === 'number'),
 });
 
 client.once(Events.ClientReady, (c: Client) => {
