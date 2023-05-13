@@ -21,4 +21,4 @@ client.on(Events.MessageCreate, async (message: Message) => {
     }
 });
 
-client.login(process.env.TOKEN);
+client.login(process.env.DISCORD_TOKEN);
