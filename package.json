@@ -2,7 +2,7 @@
   "dependencies": {
     "@types/node": "^20.1.0",
     "discord.js": "^14.11.0",
-    "dotenv": "^16.0.3",
+    "dotenv": "^16.3.1",
     "node": "^20.2.0",
     "npm": "^9.6.6"
   },
@@ -21,6 +21,6 @@
   "bugs": {
     "url": "https://github.com/ZoneProject/otoiro/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/ZoneProject/otoiro#readme",
   "description": ""
 }
