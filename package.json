@@ -13,7 +13,9 @@
   "version": "1.0.0",
   "main": "main.ts",
   "scripts": {
-    "otoiro": "npx run ./main.ts"
+    "test": "ts-node src/main.ts",
+    "start": "node build/main.js",
+    "compile": "tsc"
   },
   "repository": {
     "type": "git",
