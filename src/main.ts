@@ -5,9 +5,11 @@ const {
   GatewayIntentBits,
   EmbedBuilder,
   BaseInteraction,
+  Collection,
 } = require("discord.js");
 const dotenv = require("dotenv");
 dotenv.config();
+const fs = require("fs");
 
 const client: typeof Client = new Client({
   intents: Object.values(GatewayIntentBits).filter(
@@ -23,7 +25,6 @@ client.on(Events.MessageCreate, async (message: typeof Message) => {
   if (message.author.bot) {
     return;
   }
-
   if (message.content.startsWith("!")) {
     await message.reply({
       embeds: [
