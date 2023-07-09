@@ -1,26 +1,32 @@
 {
   "dependencies": {
     "@types/node": "^20.1.0",
-    "deno": "^0.1.1",
-    "discordeno": "^18.0.1",
-    "dotenv": "^16.0.3",
-    "npm": "^9.6.6"
+    "discord.js": "^14.11.0",
+    "dotenv": "^16.3.1",
+    "eslint": "^8.44.0",
+    "fs": "^0.0.1-security",
+    "node": "^20.2.0",
+    "npm": "^9.6.6",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
   },
   "name": "otoiro",
   "version": "1.0.0",
   "main": "main.ts",
   "scripts": {
-    "otoiro": "deno run -A --watch ./main.ts"
+    "test": "ts-node src/main.ts",
+    "start": "node build/main.js",
+    "tsc": "tsc"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ritsu-me/otoiro.git"
+    "url": "git+https://github.com/ZoneProject/otoiro.git"
   },
-  "author": "ritsu-me",
-  "license": "MIT",
+  "author": "ZoneProject",
+  "license": "WTFPL",
   "bugs": {
-    "url": "https://github.com/ritsu-me/otoiro/issues"
+    "url": "https://github.com/ZoneProject/otoiro/issues"
   },
-  "homepage": "",
+  "homepage": "https://github.com/ZoneProject/otoiro#readme",
   "description": ""
 }
