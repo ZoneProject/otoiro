@@ -8,7 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-const { Message, Client, Events, GatewayIntentBits, EmbedBuilder, BaseInteraction, Collection, } = require("discord.js");
+const { Message, Client, Events, GatewayIntentBits, EmbedBuilder, BaseInteraction, } = require("discord.js");
 const dotenv = require("dotenv");
 dotenv.config();
 const fs = require("fs");

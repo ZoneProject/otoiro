@@ -5,7 +5,6 @@ const {
   GatewayIntentBits,
   EmbedBuilder,
   BaseInteraction,
-  Collection,
 } = require("discord.js");
 const dotenv = require("dotenv");
 dotenv.config();
@@ -57,3 +56,4 @@ client.on(
 );
 
 client.login(process.env.DISCORD_TOKEN);
+
